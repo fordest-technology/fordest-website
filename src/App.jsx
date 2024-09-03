@@ -16,7 +16,10 @@ function App() {
         path="/about"
         element={
           <>
-            <h2>About Us We are the best </h2>
+            <h2>
+              About Us We are the best We are the bestWe are the bestWe are the
+              best{" "}
+            </h2>
           </>
         }
       />
