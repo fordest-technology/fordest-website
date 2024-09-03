@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 function App() {
@@ -16,9 +15,9 @@ function App() {
         path="/about"
         element={
           <>
-            <h2>
-              About Us We are the best We are the best We are the best We are
-              the best{" "}
+            <h2 className=" flex w-full flex-col justify-start">
+              About Us We are the best We are the bestWe are the bestWe are the
+              best{" "}
             </h2>
           </>
         }
