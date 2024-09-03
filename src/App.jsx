@@ -16,7 +16,7 @@ function App() {
         path="/about"
         element={
           <>
-            <h2>About Us 1212121212121</h2>
+            <h2>About Us We are the best </h2>
           </>
         }
       />
