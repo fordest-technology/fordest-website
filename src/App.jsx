@@ -7,7 +7,7 @@ function App() {
         path="/"
         element={
           <>
-            <h1>Fordest Technologies Here we come</h1>
+            <h1>Fordest Technologies</h1>
           </>
         }
       />
