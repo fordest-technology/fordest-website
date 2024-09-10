@@ -8,7 +8,7 @@ Welcome to the Fordest Website repository! This guide will help you get started 
 
 Ensure you have the following installed:
 
-- [Node.js](https://nodejs.org/) (v16 or later recommended)
+- [Node.js](https://nodejs.org/) (v18 )
 - [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
 
 ### Installation
