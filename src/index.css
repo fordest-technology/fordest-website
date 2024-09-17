@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+nav a.active {
+    color: #0057FF;
+    position: relative;
+}
+
+nav a.active::after {
+    content: "";
+    width: 25px;
+    height: 2px;
+    background-color: #0057FF;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    left: 10px;
+    bottom: -2px; 
+}
+
+
+
+
