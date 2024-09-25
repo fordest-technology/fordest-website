@@ -1,28 +1,16 @@
 import { Route, Routes } from "react-router-dom";
-
+import { Link } from "react-router-dom";
+// import Contact from "Contact";
+import Contact from './contact'
 function App() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <h1>Fordest Technologies Here we come</h1>
-          </>
-        }
-      />
-      <Route
-        path="/about"
-        element={
-          <>
-            <h2 className=" flex w-full flex-col justify-start">
-              About Us We are the best We are the bestWe are the bestWe are the
-              best{" "}
-            </h2>
-          </>
-        }
-      />
-    </Routes>
+   <>
+   <div className="nav flex gap-7 text-5xl">
+
+  <Link to='/'>Home</Link>
+  <Link to='/contact'>contact</Link>
+   </div>
+   </>
   );
 }
 
