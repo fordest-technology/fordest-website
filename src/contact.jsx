@@ -3,7 +3,7 @@ import Background from '/image.png'
 import mail from '/mail.png'
 import call from '/call.png'
 import { Link } from 'react-router-dom'
-import './index.css'
+import './contact.css'
 
  function Contact() {
   return (
