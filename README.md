@@ -36,28 +36,40 @@ Ensure you have the following installed:
 ### Here are some useful npm scripts for development:
 
 - Start Development Server
-  ````bash
+
+```bash
   npm run dev
-  - Build:
-    ```bash
+```
+
+- Build:
+
+```bash
     npm run build
-  ````
-  - Lint the Code:
-    ```bash
+```
+
+- Lint the Code:
+
+```bash
     npm run lint
-    ```
-  - Fix Lint Issues:
-    ```bash
+```
+
+- Fix Lint Issues:
+
+```bash
     npm run lint:fix
-    ```
-  - Lint and Check for Fixable Issues:
-    ```bash
+```
+
+- Lint and Check for Fixable Issues:
+
+```bash
     npm run lint:fix-m
-    ```
-  - Lint and Show Messages
-    ```bash
+```
+
+- Lint and Show Messages
+
+```bash
     npm run lint:m
-    ```
+```
 
 ## Contributing
 
@@ -84,7 +96,7 @@ When creating a pull request (PR), please adhere to the following guidelines:
 
    Use clear and concise commit messages following the [Conventional Commits](https://www.conventionalcommits.org/) specification:
 
-   ```plaintext
+```plaintext
    type(scope): description
 
    [optional body]
@@ -97,7 +109,7 @@ When creating a pull request (PR), please adhere to the following guidelines:
     Implement Google OAuth for user authentication.
 
     Pull Request Title
-   ```
+```
 
 # Pull Request Title
 
@@ -114,16 +126,16 @@ After your PR is merged, make sure to perform the following steps:
 
 - **Update the Main Branch**: Pull the latest changes into your local `main` branch.
 
-  ```bash
+```bash
   git checkout main
   git pull origin main
-  ```
+```
 
 - **Delete the Feature Branch**: Delete the feature branch locally if it is no longer needed.
 
-  ```bash
+```bash
   git branch -d feature/branch-name
-  ```
+```
 
 Keeping your branches up-to-date and cleaning up after merges helps maintain a clean and organized repository.
 
