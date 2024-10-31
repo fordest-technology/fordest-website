@@ -17,5 +17,5 @@ nav a.active::after {
     margin: 0 auto;
     position: absolute;
     left: 10px;
-    bottom: -2px; 
+    bottom: -2px;
 }

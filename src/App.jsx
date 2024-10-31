@@ -15,6 +15,17 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<ServicePage />} />
+        <Route
+          path="/technologies"
+          element={
+            <>
+              {" "}
+              <div className=" mt-24 w-full justify-center items-center flex flex-row text-5xl">
+                Coming soon
+              </div>
+            </>
+          }
+        />
       </Routes>
       <Footer />
     </div>
