@@ -7,8 +7,8 @@ const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   return (
-    <nav>
-      <section className="text flex justify-between items-center bg-white py-3 px-6">
+    <nav className=" w-full bg-white fixed top-0 left-0 z-30 shadow-lg">
+      <section className="text flex justify-between items-center bg-white py-3 px-6 mx-auto w-[90%] max-w-7xl ">
         <div className="w-[100px]">
           <img src={logo} alt="fordest-logo" className="w-full" />
         </div>
@@ -37,13 +37,13 @@ const Navbar = () => {
         }`}
       >
         <div className="flex justify-between">
-            <div></div>
-        <div
-          onClick={() => setMenu(false)}
-          className="text-left bg-black/10 p-1 w-fit rounded-full cursor-pointer"
-        >
-          <IoMdClose size={24} />
-        </div>
+          <div></div>
+          <div
+            onClick={() => setMenu(false)}
+            className="text-left bg-black/10 p-1 w-fit rounded-full cursor-pointer"
+          >
+            <IoMdClose size={24} />
+          </div>
         </div>
         <div className="flex flex-col gap-y-6 font-semibold">
           <NavLink to="/" onClick={() => setMenu(false)}>
