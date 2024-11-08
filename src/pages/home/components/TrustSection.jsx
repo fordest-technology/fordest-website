@@ -23,9 +23,9 @@ const TrustSection = () => {
   ];
 
   return (
-    <div className="relative px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-20 lg:-mt-28 mb-5">
+    <div className="relative px-4 sm:px-6 lg:px-6 -mt-10 sm:-mt-10 lg:-mt-16 mb-5">
       <div className="max-w-[95%] sm:max-w-[85%] lg:max-w-[923px] mx-auto bg-white rounded-lg shadow-lg">
-        <div className="flex flex-col justify-center items-center py-8 sm:py-10 lg:py-12 px-4 sm:px-6">
+        <div className="flex flex-col justify-center items-center py-8 sm:py-10 lg:py-8 px-4 sm:px-6">
           {/* Title */}
           <h2 className="text-[#0B0C3A] text-xl sm:text-2xl font-semibold mb-6 sm:mb-8">
             Brands that trust us:
