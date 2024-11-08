@@ -1,4 +1,6 @@
 import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link, Element } from "react-scroll";
 import HeroSection from "./components/HeroSection";
 import TrustSection from "./components/TrustSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
@@ -8,11 +10,82 @@ import OurMission from "./components/OurMission";
 const Home = () => {
   return (
     <div>
-      <HeroSection />
-      <TrustSection />
-      <WhyChooseUsSection />
-      <OurServices />
-      <OurMission />
+      {/* Navigation Links (Optional) */}
+      <nav className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-10 flex justify-center gap-6">
+        <Link to="hero" smooth duration={500} className="cursor-pointer">
+          Hero
+        </Link>
+        <Link to="trust" smooth duration={500} className="cursor-pointer">
+          Trust
+        </Link>
+        <Link to="whyChooseUs" smooth duration={500} className="cursor-pointer">
+          Why Choose Us
+        </Link>
+        <Link to="services" smooth duration={500} className="cursor-pointer">
+          Services
+        </Link>
+        <Link to="mission" smooth duration={500} className="cursor-pointer">
+          Mission
+        </Link>
+      </nav>
+
+      {/* Animated Sections */}
+      <AnimatePresence>
+        <Element name="hero">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <HeroSection />
+          </motion.div>
+        </Element>
+
+        <Element name="trust">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+          >
+            <TrustSection />
+          </motion.div>
+        </Element>
+
+        <Element name="whyChooseUs">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+          >
+            <WhyChooseUsSection />
+          </motion.div>
+        </Element>
+
+        <Element name="services">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+          >
+            <OurServices />
+          </motion.div>
+        </Element>
+
+        <Element name="mission">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+          >
+            <OurMission />
+          </motion.div>
+        </Element>
+      </AnimatePresence>
     </div>
   );
 };
