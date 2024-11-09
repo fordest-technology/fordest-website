@@ -51,26 +51,24 @@ const Footer = () => {
         <div className="col-span-10 sm:col-span-4 lg:col-span-2">
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <ul className=" flex gap-2 items-center">
-            <Link to="#">
-              <FaInstagram size={24}/>
+            <Link to="https://www.instagram.com/fordest_technologies/">
+              <FaInstagram size={24} />
             </Link>
-            <Link to="#">
-              <FaXTwitter size={24}/>
+            <Link to="https://x.com/FordestTech">
+              <FaXTwitter size={24} />
             </Link>
-            <Link to="#">
-              <FaFacebook size={24}/>
+            <Link to="https://web.facebook.com/profile.php?id=61554665091364">
+              <FaFacebook size={24} />
             </Link>
-            <Link to="#">
-              <FaLinkedin size={24}/>
+            <Link to="https://www.linkedin.com/company/fordest-technologies/">
+              <FaLinkedin size={24} />
             </Link>
           </ul>
         </div>
       </section>
       {/* Bottom copyright */}
       <div className="text-center mt-8 border-t border-gray-500 pt-4">
-        <p>
-          &copy; {new Date().getFullYear()} Fordest Technologies.
-        </p>
+        <p>&copy; {new Date().getFullYear()} Fordest Technologies.</p>
       </div>
     </footer>
   );
