@@ -49,7 +49,6 @@ const WhyChooseUs = () => {
     };
   }, []);
 
-  // Test button to manually trigger shake on desktop
   const triggerShake = () => {
     setShake(true);
     setTimeout(() => setShake(false), 500);
@@ -78,7 +77,9 @@ const WhyChooseUs = () => {
       },
     },
     shake: {
-      x: [-5, 5, -5, 5, 0],
+      x: [-10, 10, -10, 10, 0],
+      y: [-5, 5, -5, 5, 0],
+      scale: [1, 1.1, 1],
       transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
