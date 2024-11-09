@@ -5,11 +5,13 @@ import Contact from "./pages/contactPage/contact";
 import Home from "./pages/home/Home";
 import AboutPage from "./pages/about/AboutPage";
 import ServicePage from "./pages/service/ServicePage";
+import ScrollToTop from "./components/Common/ScrollToTop";
 
 function App() {
   return (
     <div>
       <Navbar />
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutPage />} />
@@ -18,12 +20,9 @@ function App() {
         <Route
           path="/technologies"
           element={
-            <>
-              {" "}
-              <div className=" mt-24 w-full justify-center items-center flex flex-row text-5xl">
-                Coming soon
-              </div>
-            </>
+            <div className=" mt-24 w-full justify-center items-center flex flex-row text-5xl">
+              Coming soon
+            </div>
           }
         />
       </Routes>

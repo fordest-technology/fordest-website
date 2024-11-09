@@ -36,19 +36,19 @@ const OurTeam = () => {
       socialLinks: {
         linkedin: {
           image: "/icons/jam_linkedin-square.svg",
-          link: "https://www.linkedin.com/in/janedoe",
+          link: "https://www.linkedin.com/",
         },
         x: {
           image: "/icons/mage_x.svg",
-          link: "https://x.com/janedoe",
+          link: "https://x.com/Johntechdev",
         },
         instagram: {
           image: "/icons/cib_instagram.svg",
-          link: "https://instagram.com/janedoe",
+          link: "https://www.instagram.com/johntechdev/",
         },
         facebook: {
           image: "/icons/mingcute_facebook-line.svg",
-          link: "https://facebook.com/janedoe",
+          link: "https://web.facebook.com/people/John-Akinmolayan/pfbid02DpJY4D4GegsU2VRhjGWitcJQUreheETFApvEE5t7aw3ws6bJCUuxcgGmXp1D46RTl/?checkpoint_src=any",
         },
       },
     },
