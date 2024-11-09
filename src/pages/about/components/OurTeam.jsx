@@ -12,19 +12,19 @@ const OurTeam = () => {
       socialLinks: {
         linkedin: {
           image: "/icons/jam_linkedin-square.svg",
-          link: "https://www.linkedin.com/in/sanyaololade",
+          link: "https://www.linkedin.com/in/ololade-sanya-106990272/",
         },
         x: {
           image: "/icons/mage_x.svg",
-          link: "https://x.com/sanyaololade",
+          link: "https://x.com/Sanya_Ololade",
         },
         instagram: {
           image: "/icons/cib_instagram.svg",
-          link: "https://instagram.com/sanyaololade",
+          link: "https://www.instagram.com/sanya_ololade/",
         },
         facebook: {
           image: "/icons/mingcute_facebook-line.svg",
-          link: "https://facebook.com/sanyaololade",
+          link: "https://web.facebook.com/profile.php?id=61552501215762",
         },
       },
     },
