@@ -1,11 +1,42 @@
 import React from "react";
+import { motion } from "framer-motion";
 import Button from "../../../components/common/Button";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
 
 const ContactSection = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-between items-start px-6 py-16 max-w-7xl mx-auto space-y-12 md:space-y-0 md:space-x-12">
+    <motion.div
+      className="flex flex-col md:flex-row justify-between items-start px-6 py-16 max-w-7xl mx-auto space-y-12 md:space-y-0 md:space-x-12"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.3,
+          },
+        },
+      }}
+    >
       {/* Left Section */}
-      <div className="w-full md:w-1/2 text-left">
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="w-full md:w-1/2 text-left"
+      >
         <h4 className="text-[#0057FF] font-semibold mb-2">Get in touch</h4>
         <h2 className="text-4xl md:text-5xl font-bold text-[#0B0C3A] mb-4 leading-tight">
           Have a question or feedback?
@@ -16,10 +47,16 @@ const ContactSection = () => {
           reach out via email or phone. Our team is here to provide prompt
           assistance and ensure you have all the details you need.
         </p>
-      </div>
+      </motion.div>
 
       {/* Right Section (Contact Form) */}
-      <div className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="w-full md:w-1/2 bg-white rounded-lg shadow-lg p-8 border border-gray-200"
+      >
         <h3 className="text-gray-800 font-semibold text-lg mb-1">Contact Us</h3>
         <h4 className="text-[#0057FF] font-bold text-2xl mb-6">
           Send Us a Message
@@ -27,7 +64,12 @@ const ContactSection = () => {
 
         <form className="space-y-5">
           {/* Name Field */}
-          <div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <label
               htmlFor="name"
               className="block text-gray-800 font-medium mb-1"
@@ -41,10 +83,15 @@ const ContactSection = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your name"
             />
-          </div>
+          </motion.div>
 
           {/* Email Field */}
-          <div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <label
               htmlFor="email"
               className="block text-gray-800 font-medium mb-1"
@@ -58,10 +105,15 @@ const ContactSection = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your email"
             />
-          </div>
+          </motion.div>
 
           {/* Phone Number Field */}
-          <div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <label
               htmlFor="phone"
               className="block text-gray-800 font-medium mb-1"
@@ -75,10 +127,15 @@ const ContactSection = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Enter your phone number"
             />
-          </div>
+          </motion.div>
 
           {/* Message Field */}
-          <div>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             <label
               htmlFor="message"
               className="block text-gray-800 font-medium mb-1"
@@ -92,12 +149,19 @@ const ContactSection = () => {
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"
               placeholder="Write your message here"
             ></textarea>
-          </div>
+          </motion.div>
 
-          <Button variant="full">Send</Button>
+          <motion.div
+            variants={sectionVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <Button variant="full">Send</Button>
+          </motion.div>
         </form>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 

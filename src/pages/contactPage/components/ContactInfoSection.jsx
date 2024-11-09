@@ -1,11 +1,38 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.8, ease: "easeOut" },
+  },
+};
 
 const ContactInfoSection = () => {
   return (
-    <div className="max-w-7xl mx-auto py-16 px-4 grid grid-cols-1 md:grid-cols-2 gap-12 text-left">
+    <motion.div
+      className="max-w-7xl mx-auto py-16 px-4 grid grid-cols-1 md:grid-cols-2 gap-12 text-left"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.2,
+          },
+        },
+      }}
+    >
       {/* General Inquiries */}
-      <div>
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h3 className="text-[#0057FF] font-bold text-xl mb-2">
           General Inquiries:
         </h3>
@@ -21,10 +48,15 @@ const ContactInfoSection = () => {
           <Phone className="h-5 w-5 text-[#0057FF]" />
           <span>+2348127874913</span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Sales and Partnerships */}
-      <div>
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h3 className="text-[#0057FF] font-bold text-xl mb-2">
           Sales and Partnerships:
         </h3>
@@ -37,10 +69,15 @@ const ContactInfoSection = () => {
           <Mail className="h-5 w-5 text-[#0057FF]" />
           <span>sales@fordestech.com</span>
         </div>
-      </div>
+      </motion.div>
 
       {/* Visit Our Office */}
-      <div>
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h3 className="text-[#0057FF] font-bold text-xl mb-2">
           Visit Our Office:
         </h3>
@@ -56,10 +93,15 @@ const ContactInfoSection = () => {
             <p>Lagos State, Nigeria</p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Business Hours */}
-      <div>
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         <h3 className="text-[#0057FF] font-bold text-xl mb-2">
           Business Hours:
         </h3>
@@ -78,8 +120,8 @@ const ContactInfoSection = () => {
           Thank you for choosing Fordest Technologies. We look forward to
           hearing from you!
         </p>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
