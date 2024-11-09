@@ -10,25 +10,6 @@ import OurMission from "./components/OurMission";
 const Home = () => {
   return (
     <div>
-      {/* Navigation Links (Optional) */}
-      <nav className="fixed top-0 left-0 w-full bg-white shadow-md p-4 z-10 flex justify-center gap-6">
-        <Link to="hero" smooth duration={500} className="cursor-pointer">
-          Hero
-        </Link>
-        <Link to="trust" smooth duration={500} className="cursor-pointer">
-          Trust
-        </Link>
-        <Link to="whyChooseUs" smooth duration={500} className="cursor-pointer">
-          Why Choose Us
-        </Link>
-        <Link to="services" smooth duration={500} className="cursor-pointer">
-          Services
-        </Link>
-        <Link to="mission" smooth duration={500} className="cursor-pointer">
-          Mission
-        </Link>
-      </nav>
-
       {/* Animated Sections */}
       <AnimatePresence>
         <Element name="hero">
