@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const ServicesSection = () => {
   const services = [
@@ -30,24 +31,70 @@ const ServicesSection = () => {
       icon: "/icons/material-symbols_bookmark-manager-outline.svg",
       title: "Product Management",
       description:
-        "Maximize the potential of your products with our comprehensive product management services. From ideation to market launch, we assist in defining product roadmaps, prioritizing features, and ensuring alignment with your business goals. Our product management expertise ensures that your offerings not only meet but exceed customer expectations.",
+        "Maximize the potential of your products with our comprehensive product management services. From ideation to market launch, we assist in defining product roadmaps, prioritizing features, and ensuring alignment with your business goals.",
     },
     {
       icon: "/icons/fluent-mdl2_shop-server.svg",
       title: "E-commerce Solutions",
       description:
-        "Elevate your online business with our tailored e-commerce solutions. Whether you’re looking to set up a new online store, optimize an existing one, or integrate advanced e-commerce features, our team is equipped to meet your specific requirements. We provide end-to-end solutions, from secure payment gateways to user-friendly interfaces, ensuring a seamless and secure shopping experience for your customers.",
+        "Elevate your online business with our tailored e-commerce solutions. Whether you’re looking to set up a new online store, optimize an existing one, or integrate advanced e-commerce features, our team is equipped to meet your specific requirements.",
     },
   ];
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
 
   return (
     <section className="bg-[#F4F7FD] py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={headerVariants}
+          className="flex flex-col items-center gap-4 mb-10 md:mb-16"
+        >
+          <motion.h2
+            variants={headerVariants}
+            className="text-[#0B0C3A] text-3xl md:text-4xl font-bold text-center px-4"
+          >
+            Our Services
+          </motion.h2>
+          <motion.div
+            variants={headerVariants}
+            className="h-1 w-24 md:w-36 bg-[#0B0C3A] rounded-full"
+          ></motion.div>
+        </motion.div>
+
+        {/* Services Container */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 items-start">
           {services.map((service, index) => (
-            <div
+            <motion.div
               key={index}
               className="flex flex-col items-center text-center gap-4 px-4"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={cardVariants}
             >
               <img
                 src={service.icon}
@@ -60,7 +107,7 @@ const ServicesSection = () => {
               <p className="text-sm md:text-base text-gray-700">
                 {service.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 const WhyChooseUs = () => {
   const features = [
@@ -22,23 +23,113 @@ const WhyChooseUs = () => {
     },
   ];
 
+  const [shake, setShake] = useState(false);
+
+  useEffect(() => {
+    const handleShake = (event) => {
+      const { acceleration } = event;
+      const shakeThreshold = 15;
+
+      if (
+        Math.abs(acceleration.x) > shakeThreshold ||
+        Math.abs(acceleration.y) > shakeThreshold ||
+        Math.abs(acceleration.z) > shakeThreshold
+      ) {
+        setShake(true);
+        setTimeout(() => setShake(false), 500);
+      }
+    };
+
+    if (typeof window !== "undefined" && window.DeviceMotionEvent) {
+      window.addEventListener("devicemotion", handleShake);
+    }
+
+    return () => {
+      window.removeEventListener("devicemotion", handleShake);
+    };
+  }, []);
+
+  // Test button to manually trigger shake on desktop
+  const triggerShake = () => {
+    setShake(true);
+    setTimeout(() => setShake(false), 500);
+  };
+
+  const headerVariants = {
+    hidden: { opacity: 0, y: -30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    },
+    shake: {
+      x: [-5, 5, -5, 5, 0],
+      transition: { duration: 0.5, ease: "easeInOut" },
+    },
+  };
+
   return (
     <div className="w-full py-12 md:py-16 lg:py-20 px-4">
       {/* Section Header */}
-      <div className="flex flex-col items-center gap-4 mb-10 md:mb-16">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={headerVariants}
+        className="flex flex-col items-center gap-4 mb-10 md:mb-16"
+      >
         <h2 className="text-[#0B0C3A] text-3xl md:text-4xl font-bold text-center px-4">
           Why Choose Fordest Technologies?
         </h2>
         <div className="h-1 w-24 md:w-36 bg-[#0B0C3A] rounded-full"></div>
+      </motion.div>
+
+      {/* Test Button - Only visible on desktop for testing */}
+      <div className="flex justify-center mb-6">
+        <button
+          onClick={triggerShake}
+          className="px-4 py-2 bg-blue-600 text-white rounded-md"
+        >
+          Trigger Shake
+        </button>
       </div>
 
       {/* Features Container */}
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+        <motion.div
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
           {features.map((feature) => (
-            <div
+            <motion.div
               key={feature.title}
-              className="flex flex-col items-start text-start p-6 border border-[#BDBDBD] rounded-lg shadow-md transition-transform transform hover:scale-105"
+              className="flex flex-col items-start text-start p-6 border border-[#BDBDBD] rounded-lg shadow-md"
+              variants={cardVariants}
+              animate={shake ? "shake" : "visible"}
             >
               <img
                 src={feature.image}
@@ -52,9 +143,9 @@ const WhyChooseUs = () => {
               <p className="text-[#1D1D1D] text-sm md:text-base font-medium">
                 {feature.description}
               </p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
