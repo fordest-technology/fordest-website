@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 
 const WhyChooseUs = () => {
@@ -23,37 +23,6 @@ const WhyChooseUs = () => {
     },
   ];
 
-  const [shake, setShake] = useState(false);
-
-  useEffect(() => {
-    const handleShake = (event) => {
-      const { acceleration } = event;
-      const shakeThreshold = 15;
-
-      if (
-        Math.abs(acceleration.x) > shakeThreshold ||
-        Math.abs(acceleration.y) > shakeThreshold ||
-        Math.abs(acceleration.z) > shakeThreshold
-      ) {
-        setShake(true);
-        setTimeout(() => setShake(false), 500);
-      }
-    };
-
-    if (typeof window !== "undefined" && window.DeviceMotionEvent) {
-      window.addEventListener("devicemotion", handleShake);
-    }
-
-    return () => {
-      window.removeEventListener("devicemotion", handleShake);
-    };
-  }, []);
-
-  const triggerShake = () => {
-    setShake(true);
-    setTimeout(() => setShake(false), 500);
-  };
-
   const headerVariants = {
     hidden: { opacity: 0, y: -30 },
     visible: {
@@ -61,6 +30,17 @@ const WhyChooseUs = () => {
       y: 0,
       transition: {
         duration: 1,
+        ease: "easeOut",
+      },
+    },
+  };
+
+  const underlineVariants = {
+    hidden: { scaleX: 0 },
+    visible: {
+      scaleX: 1,
+      transition: {
+        duration: 0.6,
         ease: "easeOut",
       },
     },
@@ -75,12 +55,6 @@ const WhyChooseUs = () => {
         duration: 0.8,
         ease: "easeOut",
       },
-    },
-    shake: {
-      x: [-10, 10, -10, 10, 0],
-      y: [-5, 5, -5, 5, 0],
-      scale: [1, 1.1, 1],
-      transition: { duration: 0.5, ease: "easeInOut" },
     },
   };
 
@@ -97,18 +71,11 @@ const WhyChooseUs = () => {
         <h2 className="text-[#0B0C3A] text-3xl md:text-4xl font-bold text-center px-4">
           Why Choose Fordest Technologies?
         </h2>
-        <div className="h-1 w-24 md:w-36 bg-[#0B0C3A] rounded-full"></div>
+        <motion.div
+          className="h-1 w-24 md:w-36 bg-[#0B0C3A] rounded-full origin-center"
+          variants={underlineVariants}
+        ></motion.div>
       </motion.div>
-
-      {/* Test Button - Only visible on desktop for testing */}
-      <div className="flex justify-center mb-6">
-        <button
-          onClick={triggerShake}
-          className="px-4 py-2 bg-blue-600 text-white rounded-md"
-        >
-          Trigger Shake
-        </button>
-      </div>
 
       {/* Features Container */}
       <div className="max-w-7xl mx-auto">
@@ -130,7 +97,6 @@ const WhyChooseUs = () => {
               key={feature.title}
               className="flex flex-col items-start text-start p-6 border border-[#BDBDBD] rounded-lg shadow-md"
               variants={cardVariants}
-              animate={shake ? "shake" : "visible"}
             >
               <img
                 src={feature.image}
