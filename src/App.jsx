@@ -6,6 +6,7 @@ import Home from "./pages/home/Home";
 import AboutPage from "./pages/about/AboutPage";
 import ServicePage from "./pages/service/ServicePage";
 import ScrollToTop from "./ScrollToTop";
+import TechnologiesPage from "./pages/technologies/TechnologiesPage";
 
 function App() {
   return (
@@ -19,11 +20,7 @@ function App() {
         <Route path="/services" element={<ServicePage />} />
         <Route
           path="/technologies"
-          element={
-            <div className=" mt-24 w-full justify-center items-center flex flex-row text-5xl">
-              Coming soon
-            </div>
-          }
+          element={<TechnologiesPage />}
         />
       </Routes>
       <Footer />
