@@ -6,6 +6,7 @@ import TrustSection from "./components/TrustSection";
 import WhyChooseUsSection from "./components/WhyChooseUsSection";
 import OurServices from "./components/OurServices";
 import OurMission from "./components/OurMission";
+import ProductSection from "./components/ProductSection";
 
 const Home = () => {
   return (
@@ -53,6 +54,17 @@ const Home = () => {
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
           >
             <OurServices />
+          </motion.div>
+        </Element>
+
+        <Element name="products">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -30 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }}
+          >
+         <ProductSection />
           </motion.div>
         </Element>
 
