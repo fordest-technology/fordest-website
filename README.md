@@ -1,148 +1,36 @@
-# Fordest Website
-
-Welcome to the Fordest Website repository! This guide will help you get started with the project and understand the contribution process.
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-### Prerequisites
-
-Ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (v18 )
-- [npm](https://www.npmjs.com/get-npm) (comes with Node.js)
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   https://github.com/fordest-technology/fordest-website.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd fordest-website
-   ```
-
-3. Install the dependencies:
-
-   ```bash
-   npm install
-   ```
-
-## Scripts
-
-### Here are some useful npm scripts for development:
-
-- Start Development Server
+First, run the development server:
 
 ```bash
-  npm run dev
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-- Build:
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-    npm run build
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- Lint the Code:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-```bash
-    npm run lint
-```
+## Learn More
 
-- Fix Lint Issues:
+To learn more about Next.js, take a look at the following resources:
 
-```bash
-    npm run lint:fix
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- Lint and Check for Fixable Issues:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-```bash
-    npm run lint:fix-m
-```
+## Deploy on Vercel
 
-- Lint and Show Messages
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-```bash
-    npm run lint:m
-```
-
-## Contributing
-
-### Pull Request Guidelines
-
-When creating a pull request (PR), please adhere to the following guidelines:
-
-1. **Branch Naming**
-
-   Use the following format for branch names:
-
-   - `feature/short-description` for new features
-   - `UI/short-description` for new ui
-   - `bugfix/short-description` for bug fixes
-   - `chore/short-description` for maintenance tasks or non-functional changes
-
-   Example:
-
-   - `feature/add-user-authentication`
-   - `bugfix/fix-login-issue`
-   - `chore/update-dependencies`
-
-2. **Commit Messages**
-
-   Use clear and concise commit messages following the [Conventional Commits](https://www.conventionalcommits.org/) specification:
-
-```plaintext
-   type(scope): description
-
-   [optional body]
-
-   [optional footer]
-   Example :
-
-   feat(auth): add Google authentication integration
-
-    Implement Google OAuth for user authentication.
-
-    Pull Request Title
-```
-
-# Pull Request Title
-
-The PR title should be descriptive and follow the format:
-
-[type] short description of the change
-
-**Example:**
-[feat] add responsive design for mobile devices
-
-**Post-Merge Actions**
-
-After your PR is merged, make sure to perform the following steps:
-
-- **Update the Main Branch**: Pull the latest changes into your local `main` branch.
-
-```bash
-  git checkout main
-  git pull origin main
-```
-
-- **Delete the Feature Branch**: Delete the feature branch locally if it is no longer needed.
-
-```bash
-  git branch -d feature/branch-name
-```
-
-Keeping your branches up-to-date and cleaning up after merges helps maintain a clean and organized repository.
-
-### Summary
-
-```
-
-Added responsive design for mobile devices to improve user experience.
-
-```
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
