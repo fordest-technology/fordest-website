@@ -18,15 +18,15 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // The navbar should be solid if we're not on the home page OR if we've scrolled
-    const showSolidBackground = !isHome || isScrolled;
-    const bgColor = showSolidBackground ? "rgba(3, 37, 117, 1)" : "transparent";
+    // The navbar should be glassmorphic if we're not on the home page OR if we've scrolled
+    const isGlassy = !isHome || isScrolled;
 
     return (
         <nav
-            className={`fixed top-0 z-50 w-full transition-all duration-300 ${showSolidBackground ? "py-4 shadow-lg" : "py-6"
+            className={`fixed top-0 z-50 w-full transition-all duration-300 ${isGlassy 
+                ? "py-4 bg-[#03216E]/70 backdrop-blur-md border-b border-white/10 shadow-lg" 
+                : "py-6 bg-transparent"
                 }`}
-            style={{ backgroundColor: bgColor }}
         >
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
                 {/* Logo */}
@@ -50,7 +50,7 @@ export default function Navbar() {
 
                 {/* Contact Button */}
                 <Link href="/contact">
-                    <button className={`rounded-full px-10 py-3 text-sm font-bold transition-all hover:scale-105 active:scale-95 ${showSolidBackground
+                    <button className={`rounded-full px-10 py-3 text-sm font-bold transition-all hover:scale-105 active:scale-95 ${isGlassy
                         ? "bg-white text-black"
                         : "bg-white text-[#001B44]"
                         }`}>

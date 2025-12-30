@@ -66,7 +66,7 @@ const WhyChooseUs = () => {
                                 <h3 className="font-poppins font-bold text-[20px] leading-tight text-[rgba(40,41,56,1)]">
                                     {feature.title}
                                 </h3>
-                                <p className="font-poppins font-[700px] font-bold w-[290px] text-[15px] leading-relaxed text-[rgba(40,41,56,1)]">
+                                <p className="font-poppins font-bold w-[290px] text-[15px] leading-relaxed text-[rgba(40,41,56,1)]">
                                     {feature.description}
                                 </p>
                             </div>
