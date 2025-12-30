@@ -85,37 +85,37 @@ const Card = ({ card, index, progress, range, targetScale }: {
     const scale = useTransform(progress, range, [1, targetScale]);
 
     return (
-        <div ref={container} className="h-[85vh] flex items-center justify-center sticky top-[15vh]">
+        <div ref={container} className="min-h-[500px] h-[75vh] md:h-[80vh] lg:h-[85vh] flex items-center justify-center sticky top-[10vh] md:top-[12vh]">
             <motion.div
                 style={{
                     scale,
-                    top: `${index * 24}px`
+                    top: `${index * 20}px`
                 }}
-                className="relative w-full max-w-[1240px] flex flex-col items-center"
+                className="relative w-full max-w-[95%] md:max-w-[90%] lg:max-w-[1240px] flex flex-col items-center px-4 md:px-0"
             >
-                <div className="bg-white rounded-[48px] p-8 md:py-16 md:px-20 shadow-[0_30px_80px_rgba(0,0,0,0.35)] relative overflow-hidden w-full flex flex-col justify-center gap-4">
+                <div className="bg-white rounded-[24px] md:rounded-[40px] lg:rounded-[48px] p-4 py-6 md:p-8 md:py-10 lg:py-12 lg:px-16 shadow-[0_20px_60px_rgba(0,0,0,0.25)] md:shadow-[0_30px_80px_rgba(0,0,0,0.35)] relative overflow-hidden w-full flex flex-col gap-3 md:gap-4">
                     {/* Centered Header inside Card */}
                     <div className="text-center">
-                        <h3 className="mx-auto max-w-[800px] font-sora font-bold text-[32px] md:text-[36px] leading-[1.2] text-black tracking-tight">
+                        <h3 className="mx-auto max-w-[800px] font-sora font-bold text-[22px] md:text-[28px] lg:text-[36px] leading-[1.2] text-black tracking-tight">
                             {card.title}
                         </h3>
-                        <p className="mx-auto max-w-[650px] font-sora font-medium text-[18px] md:text-[20px] leading-[1.5] text-black/70 text-center">
+                        <p className="mx-auto max-w-[650px] font-sora font-medium text-[14px] md:text-[16px] lg:text-[20px] leading-[1.5] text-black/70 text-center">
                             {card.description}
                         </p> 
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-8 items-center">
+                    <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
                         {/* Left Column: List */}
-                        <ul className="space-y-6">
+                        <ul className="space-y-3 md:space-y-4 lg:space-y-6">
                             {card.services.map((service, sIndex) => (
-                                <li key={sIndex} className="flex items-center gap-4 group">
+                                <li key={sIndex} className="flex items-center gap-3 md:gap-4 group">
                                     <div
-                                        className="flex-shrink-0 flex items-center justify-center w-[40px] h-[40px] rounded-[14px] bg-[#C3CFED]"
+                                        className="flex-shrink-0 flex items-center justify-center w-[32px] h-[32px] md:w-[36px] md:h-[36px] lg:w-[40px] lg:h-[40px] rounded-[10px] md:rounded-[12px] lg:rounded-[14px] bg-[#C3CFED]"
                                     >
-                                        <service.icon className="w-5 h-5 text-[#052D8F]" />
+                                        <service.icon className="w-4 h-4 md:w-5 md:h-5 text-[#052D8F]" />
                                     </div>
                                     <span
-                                        className="font-sora font-semibold text-[16px] md:text-[18px] leading-tight text-black"
+                                        className="font-sora font-semibold text-[13px] md:text-[15px] lg:text-[18px] leading-tight text-black"
                                     >
                                         {service.title}
                                     </span>
@@ -125,7 +125,7 @@ const Card = ({ card, index, progress, range, targetScale }: {
 
                         {/* Right Column: Illustration */}
                         <div className="relative flex justify-center items-center">
-                            <div className="relative w-full aspect-square max-w-[450px]">
+                            <div className="relative w-full aspect-square max-w-[200px] md:max-w-[320px] lg:max-w-[450px]">
                                 <Image
                                     src={card.image}
                                     alt={`${card.title} Illustration`}
