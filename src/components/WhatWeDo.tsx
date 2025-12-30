@@ -63,7 +63,7 @@ const cardsData: CardData[] = [
     {
         title: "Mentorship & Advisory Support",
         description: "Guidance from industry experts to help you scale your product and business effectively.",
-        image: "/image 23.svg",
+        image: "/mentorship.png",
         services: [
             { icon: Users, title: "Technical mentorship for teams" },
             { icon: Lightbulb, title: "Product discovery & strategy" },

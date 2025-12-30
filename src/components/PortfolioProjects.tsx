@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const categories = ["All", "Web3", "Saas", "Blockchain"];
 
@@ -93,39 +94,40 @@ const PortfolioProjects = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
                     <AnimatePresence mode='wait'>
                         {filteredProjects.map((project) => (
-                            <motion.div
-                                key={project.id}
-                                layout
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.4 }}
-                                className="group cursor-pointer space-y-6"
-                            >
-                                {/* Project Image Container */}
-                                <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden bg-zinc-100">
-                                    <img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                                    />
-                                </div>
+                            <Link href={project.link} key={project.id}>
+                                <motion.div
+                                    layout
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.9 }}
+                                    transition={{ duration: 0.4 }}
+                                    className="group cursor-pointer space-y-6"
+                                >
+                                    {/* Project Image Container */}
+                                    <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden bg-zinc-100">
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                        />
+                                    </div>
 
-                                {/* Project Info */}
-                                <div className="space-y-4">
-                                    <h3 className="font-sora font-bold text-[32px] text-[rgba(40,41,56,1)] transition-colors group-hover:text-[#3B42FF]">
-                                        {project.title}
-                                    </h3>
-                                    <p className="font-poppins text-[#475467] text-[18px] leading-relaxed line-clamp-2">
-                                        {project.description}
-                                    </p>
+                                    {/* Project Info */}
+                                    <div className="space-y-4">
+                                        <h3 className="font-sora font-bold text-[32px] text-[rgba(40,41,56,1)] transition-colors group-hover:text-[#3B42FF]">
+                                            {project.title}
+                                        </h3>
+                                        <p className="font-poppins text-[#475467] text-[18px] leading-relaxed line-clamp-2">
+                                            {project.description}
+                                        </p>
 
-                                    <button className="flex items-center gap-2 font-poppins font-bold text-[18px] text-[rgba(40,41,56,1)] group/btn">
-                                        View Portfolio
-                                        <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-2" />
-                                    </button>
-                                </div>
-                            </motion.div>
+                                        <div className="flex items-center gap-2 font-poppins font-bold text-[18px] text-[rgba(40,41,56,1)] group/btn">
+                                            View Portfolio
+                                            <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-2" />
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            </Link>
                         ))}
                     </AnimatePresence>
                 </div>
