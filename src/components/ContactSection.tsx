@@ -55,7 +55,7 @@ const ContactSection = () => {
                                 <div className="mt-2 w-[120px] h-[3px] bg-[#FFB23E] rounded-full" />
                             </div>
                             <p className="font-poppins text-white/70 text-[14px] leading-relaxed pt-2">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
+                                Fill out the form below and our team will get back to you within 24 hours to discuss your project requirements.
                             </p>
                         </div>
 

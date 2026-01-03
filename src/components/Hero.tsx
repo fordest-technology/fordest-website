@@ -2,6 +2,7 @@
 
 import React from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const Hero = () => {
     return (
@@ -37,12 +38,14 @@ const Hero = () => {
                 <div 
                     className="animate-slide-up [animation-delay:400ms] mt-12"
                 >
-                    <button className="group relative flex items-center justify-center overflow-hidden bg-white px-10 py-5 rounded-full transition-all hover:scale-105 active:scale-95 shadow-xl">
-                        <span className="relative z-10 font-poppins font-bold text-lg text-[#0B0C3A]">
-                            View Projects
-                        </span>
-                        <div className="absolute inset-0 bg-zinc-100 translate-y-full transition-transform group-hover:translate-y-0" />
-                    </button>
+                    <Link href="/portfolio">
+                        <button className="group relative flex items-center justify-center overflow-hidden bg-white px-10 py-5 rounded-full transition-all hover:scale-105 active:scale-95 shadow-xl cursor-pointer">
+                            <span className="relative z-10 font-poppins font-bold text-lg text-[#0B0C3A]">
+                                View Projects
+                            </span>
+                            <div className="absolute inset-0 bg-zinc-100 translate-y-full transition-transform group-hover:translate-y-0" />
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
