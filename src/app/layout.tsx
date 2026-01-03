@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Sora, Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
-
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -32,6 +33,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable} ${poppins.variable}`}>
       <body className="antialiased">
+        <SpeedInsights />
+        <Analytics />
         <SmoothScroll />
         {children}
       </body>
