@@ -30,8 +30,8 @@ const BuildTogether = () => {
                         </h2>
 
                         <p className="font-poppins text-white/80 text-[14px] md:text-[18px] max-w-2xl mx-auto leading-relaxed">
-                            Nullam vitae purus at tortor mattis dapibus. Morbi purus est, ultricies <br className="hidden md:block" />
-                            nec dolor sit amet, scelerisque cursus purus.
+                            We help ambitious businesses scale with custom software, AI, and blockchain solutions. <br className="hidden md:block" />
+                            Ready to transform your idea into reality?
                         </p>
 
                         <div className="pt-4">

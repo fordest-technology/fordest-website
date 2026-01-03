@@ -124,7 +124,7 @@ const Card = ({ card, index, progress, range, targetScale }: {
                         </ul>
 
                         {/* Right Column: Illustration */}
-                        <div className="relative flex justify-center items-center">
+                        <div className="relative hidden lg:flex justify-center items-center">
                             <div className="relative w-full aspect-square max-w-[200px] md:max-w-[320px] lg:max-w-[450px]">
                                 <Image
                                     src={card.image}
