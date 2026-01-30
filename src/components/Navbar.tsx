@@ -8,7 +8,7 @@ import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     const pathname = usePathname();
     const isHome = pathname === "/";
 
@@ -22,11 +22,11 @@ export default function Navbar() {
 
     // Close mobile menu when pathname changes
     useEffect(() => {
-        setIsMobileMenuOpen(false);
+        setIsOpen(false);
     }, [pathname]);
 
-    const showSolidBackground = !isHome || isScrolled || isMobileMenuOpen;
-    const bgColor = showSolidBackground ? "rgba(3, 37, 117, 1)" : "transparent";
+    // The navbar should be glassmorphic if we're not on the home page OR if we've scrolled
+    const isGlassy = !isHome || isScrolled || isOpen;
 
     const navLinks = [
         { name: "Home", href: "/" },
@@ -37,13 +37,14 @@ export default function Navbar() {
 
     return (
         <nav
-            className={`fixed top-0 z-50 w-full transition-all duration-300 ${showSolidBackground ? "py-4 shadow-lg" : "py-6"
+            className={`fixed top-0 z-50 w-full transition-all duration-300 ${isGlassy
+                ? "py-4 bg-[#03216E]/90 backdrop-blur-md border-b border-white/10 shadow-lg"
+                : "py-6 bg-transparent"
                 }`}
-            style={{ backgroundColor: bgColor }}
         >
             <div className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-12">
                 {/* Logo */}
-                <Link href="/" className="flex items-center">
+                <Link href="/" className="flex items-center z-50">
                     <Image
                         src="/logo.svg"
                         alt="Fordest Technologies Logo"
@@ -66,10 +67,10 @@ export default function Navbar() {
                     ))}
                 </div>
 
-                {/* Desktop Contact Button */}
+                {/* Contact Button (Desktop) */}
                 <div className="hidden md:block">
                     <Link href="/contact">
-                        <button className={`rounded-full px-10 py-3 text-sm font-bold transition-all hover:scale-105 active:scale-95 ${showSolidBackground
+                        <button className={`rounded-full px-10 py-3 text-sm font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer ${isGlassy
                             ? "bg-white text-black"
                             : "bg-white text-[#001B44]"
                             }`}>
@@ -80,34 +81,32 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white p-2"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    className="block md:hidden text-white z-50 cursor-pointer p-2"
+                    onClick={() => setIsOpen(!isOpen)}
                     aria-label="Toggle menu"
                 >
-                    {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    {isOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>
-            </div>
 
-            {/* Mobile Menu Overlay */}
-            {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-full left-0 w-full bg-[#032575] border-t border-white/10 py-8 px-6 flex flex-col space-y-6 shadow-xl animate-in fade-in slide-in-from-top-4 duration-300">
+                {/* Mobile Menu Overlay */}
+                <div className={`fixed inset-0 bg-[#03216E] z-40 flex flex-col items-center justify-center space-y-8 transition-transform duration-300 md:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-white text-lg font-semibold border-b border-white/5 pb-4"
-                            onClick={() => setIsMobileMenuOpen(false)}
+                            onClick={() => setIsOpen(false)}
+                            className="text-2xl font-semibold text-white hover:text-white/80"
                         >
                             {link.name}
                         </Link>
                     ))}
-                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                        <button className="w-full bg-white text-[#032575] rounded-full py-4 text-lg font-bold">
+                    <Link href="/contact" onClick={() => setIsOpen(false)}>
+                        <button className="rounded-full bg-white px-10 py-3 text-lg font-bold text-[#001B44] transition-all hover:scale-105 active:scale-95 cursor-pointer">
                             Contact Us
                         </button>
                     </Link>
                 </div>
-            )}
+            </div>
         </nav>
     );
 }
