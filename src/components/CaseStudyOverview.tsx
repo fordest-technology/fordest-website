@@ -41,29 +41,29 @@ const CaseStudyOverview = ({
     };
 
     return (
-        <section className="w-full py-24 px-4 md:px-8 lg:px-16 bg-white overflow-hidden">
-            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-start">
+        <section className="w-full py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white overflow-hidden border-t border-zinc-100">
+            <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 md:gap-16 items-start">
                 {/* Left Side - Content */}
-                <div className="w-full lg:w-1/2 space-y-10">
+                <div className="w-full lg:w-1/2 space-y-8 md:space-y-10">
                     <div className="space-y-4">
-                        <h2 className="font-sora font-bold text-[48px] text-[#001B44] leading-tight">
+                        <h2 className="font-sora font-bold text-[32px] md:text-[48px] text-[#001B44] leading-tight">
                             Overview
                         </h2>
-                        <p className="font-poppins text-[#475467] text-[18px] leading-relaxed max-w-xl">
+                        <p className="font-poppins text-[#475467] text-base md:text-[18px] leading-relaxed max-w-xl">
                             {overview}
                         </p>
                     </div>
 
                     {/* Tabs */}
-                    <div className="space-y-8">
-                        <div className="flex gap-8 border-b border-zinc-100 flex-wrap">
+                    <div className="space-y-6 md:space-y-8">
+                        <div className="flex gap-4 md:gap-8 border-b border-zinc-100 flex-wrap">
                             {tabs.map((tab) => (
                                 <button
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
-                                    className={`pb-4 font-poppins font-bold text-[16px] italic transition-all relative ${activeTab === tab.id
-                                            ? "text-[#001B44]"
-                                            : "text-[#98A2B3] hover:text-[#001B44]"
+                                    className={`pb-3 md:pb-4 font-poppins font-bold text-sm md:text-[16px] italic transition-all relative ${activeTab === tab.id
+                                        ? "text-[#001B44]"
+                                        : "text-[#98A2B3] hover:text-[#001B44]"
                                         }`}
                                 >
                                     {tab.label}
@@ -84,16 +84,16 @@ const CaseStudyOverview = ({
                                 animate={{ opacity: 1, x: 0 }}
                                 exit={{ opacity: 0, x: 10 }}
                                 transition={{ duration: 0.3 }}
-                                className="space-y-6"
+                                className="space-y-4 md:space-y-6"
                             >
-                                <h3 className="font-sora font-bold text-[24px] text-[#001B44]">
+                                <h3 className="font-sora font-bold text-xl md:text-[24px] text-[#001B44]">
                                     {tabContent[activeTab as keyof typeof tabContent].title}
                                 </h3>
-                                <div className="space-y-4">
+                                <div className="space-y-3 md:space-y-4">
                                     {tabContent[activeTab as keyof typeof tabContent].items.map((item, index) => (
                                         <div key={index} className="flex gap-3 items-start">
-                                            <CheckCircle2 className="w-6 h-6 text-[#FFB23E] flex-shrink-0 mt-1" />
-                                            <p className="font-poppins text-[#475467] text-[18px]">
+                                            <CheckCircle2 className="w-5 h-5 md:w-6 md:h-6 text-[#FFB23E] flex-shrink-0 mt-1" />
+                                            <p className="font-poppins text-[#475467] text-base md:text-[18px]">
                                                 {item}
                                             </p>
                                         </div>
@@ -107,10 +107,10 @@ const CaseStudyOverview = ({
                         href={websiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex bg-[#1A2B56] hover:bg-[#001B44] text-white font-bold px-10 py-4 rounded-full text-[16px] items-center gap-2 transition-all transform hover:scale-105 active:scale-95"
+                        className="inline-flex bg-[#1A2B56] hover:bg-[#001B44] text-white font-bold px-8 md:px-10 py-3.5 md:py-4 rounded-full text-sm md:text-[16px] items-center gap-2 transition-all transform hover:scale-105 active:scale-95"
                     >
                         Visit Website
-                        <ArrowRight className="w-5 h-5" />
+                        <ArrowRight className="w-4 h-4 md:w-5 md:h-5" />
                     </a>
                 </div>
 
@@ -120,7 +120,7 @@ const CaseStudyOverview = ({
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
-                        className="rounded-[20px] overflow-hidden"
+                        className="rounded-[16px] md:rounded-[20px] overflow-hidden shadow-lg md:shadow-xl"
                     >
                         <img
                             src={image}

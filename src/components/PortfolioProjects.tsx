@@ -66,15 +66,15 @@ const PortfolioProjects = () => {
         : portfolioProjects.filter(p => p.category === activeCategory);
 
     return (
-        <section className="w-full py-24 px-4 md:px-8 lg:px-16 bg-white">
-            <div className="max-w-7xl mx-auto space-y-16">
+        <section className="w-full py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
+            <div className="max-w-7xl mx-auto space-y-12 md:space-y-16">
                 {/* Filter Bar */}
-                <div className="flex flex-wrap justify-center gap-8 md:gap-12">
+                <div className="flex flex-wrap justify-center gap-6 md:gap-12">
                     {categories.map((category) => (
                         <button
                             key={category}
                             onClick={() => setActiveCategory(category)}
-                            className={`font-sora font-semibold text-[18px] transition-all relative ${activeCategory === category
+                            className={`font-sora font-semibold text-[16px] md:text-[18px] transition-all relative ${activeCategory === category
                                 ? "text-[#3B42FF]"
                                 : "text-[#475467] hover:text-[#3B42FF]"
                                 }`}
@@ -91,7 +91,7 @@ const PortfolioProjects = () => {
                 </div>
 
                 {/* Projects Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 md:gap-x-12 gap-y-12 md:gap-y-16">
                     <AnimatePresence mode='wait'>
                         {filteredProjects.map((project) => (
                             <Link href={project.link} key={project.id}>
@@ -101,10 +101,10 @@ const PortfolioProjects = () => {
                                     animate={{ opacity: 1, scale: 1 }}
                                     exit={{ opacity: 0, scale: 0.9 }}
                                     transition={{ duration: 0.4 }}
-                                    className="group cursor-pointer space-y-6"
+                                    className="group cursor-pointer space-y-4 md:space-y-6"
                                 >
                                     {/* Project Image Container */}
-                                    <div className="relative aspect-[16/10] rounded-[24px] overflow-hidden bg-zinc-100">
+                                    <div className="relative aspect-[16/10] rounded-[20px] md:rounded-[24px] overflow-hidden bg-zinc-100">
                                         <img
                                             src={project.image}
                                             alt={project.title}
@@ -113,15 +113,15 @@ const PortfolioProjects = () => {
                                     </div>
 
                                     {/* Project Info */}
-                                    <div className="space-y-4">
-                                        <h3 className="font-sora font-bold text-[32px] text-[rgba(40,41,56,1)] transition-colors group-hover:text-[#3B42FF]">
+                                    <div className="space-y-3 md:space-y-4">
+                                        <h3 className="font-sora font-bold text-[24px] md:text-[32px] text-[rgba(40,41,56,1)] transition-colors group-hover:text-[#3B42FF] leading-tight">
                                             {project.title}
                                         </h3>
-                                        <p className="font-poppins text-[#475467] text-[18px] leading-relaxed line-clamp-2">
+                                        <p className="font-poppins text-[#475467] text-base md:text-[18px] leading-relaxed line-clamp-2">
                                             {project.description}
                                         </p>
 
-                                        <div className="flex items-center gap-2 font-poppins font-bold text-[18px] text-[rgba(40,41,56,1)] group/btn">
+                                        <div className="flex items-center gap-2 font-poppins font-bold text-base md:text-[18px] text-[rgba(40,41,56,1)] group/btn">
                                             View Portfolio
                                             <ArrowRight className="w-5 h-5 transition-transform group-hover/btn:translate-x-2" />
                                         </div>
