@@ -52,6 +52,7 @@ const ExpertisePage = () => {
                     </div>
                 </section>
             </main>
+            <Footer />
         </div>
     );
 };
