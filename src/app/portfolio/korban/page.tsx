@@ -12,7 +12,7 @@ export default function KorbanCaseStudy() {
                     title="Korban"
                     subtitle="Blockchain Asset Management"
                     description="Secure and efficient platform for managing digital assets and on-chain portfolios."
-                    image="/korban-cover.svg"
+                    image="/korban.svg"
                 />
 
                 <CaseStudyOverview
@@ -44,7 +44,7 @@ export default function KorbanCaseStudy() {
                             "High adoption rate among institutional crypto funds."
                         ]
                     }}
-                    image="/korban-cover.svg"
+                    image="/korban.svg"
                 />
 
                 <BuildTogether />

@@ -68,14 +68,14 @@ const ContactSection = () => {
                         <div className="space-y-4 md:space-y-6">
                             <div className="flex flex-col">
                                 <span className="font-poppins font-bold text-white text-[16px] md:text-[18px]">Email:</span>
-                                <a href="mailto:info@fordetech.com" className="font-poppins text-white/90 text-base md:text-[18px] hover:text-[#FFB23E] transition-colors break-words">
-                                    info@fordetech.com
+                                <a href="mailto:info@fordestech.com" className="font-poppins text-white/90 text-base md:text-[18px] hover:text-[#FFB23E] transition-colors break-words">
+                                    info@fordestech.com
                                 </a>
                             </div>
                             <div className="flex flex-col">
                                 <span className="font-poppins font-bold text-white text-[16px] md:text-[18px]">Partnerships:</span>
-                                <a href="mailto:partnerships@fordesteh.com" className="font-poppins text-white/90 text-base md:text-[18px] hover:text-[#FFB23E] transition-colors break-words">
-                                    partnerships@fordesteh.com
+                                <a href="mailto:partnerships@fordestech.com" className="font-poppins text-white/90 text-base md:text-[18px] hover:text-[#FFB23E] transition-colors break-words">
+                                    partnerships@fordestech.com
                                 </a>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ const ContactSection = () => {
                                 />
                             </div>
 
-                            <button 
+                            <button
                                 disabled={isLoading}
                                 className="w-full bg-[#FFB23E] hover:bg-[#ffa726] text-[rgba(40,41,56,1)] font-bold py-5 rounded-full text-[18px] transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
@@ -141,7 +141,7 @@ const ContactSection = () => {
                                     'Send Contact'
                                 )}
                             </button>
-                            
+
                             {status === 'success' && (
                                 <p className="text-green-400 text-center font-bold">Message sent successfully!</p>
                             )}
