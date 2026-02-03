@@ -20,14 +20,14 @@ const Hero = () => {
             </div>
 
             <div className="container relative z-10 mx-auto flex flex-col items-center text-center">
-                <h1 
-                    className="animate-slide-up font-sora text-4xl font-bold leading-[1.1] tracking-tight text-white md:text-6xl lg:text-[72px] max-w-[1000px] w-full"
+                <h1
+                    className="animate-slide-up font-sora text-[32px] sm:text-[42px] md:text-6xl lg:text-[72px] font-bold leading-[1.1] tracking-tight text-white max-w-[1000px] w-full"
                 >
                     Transforming Business with <br className="hidden md:block" />
                     Intelligent Digital Solutions
                 </h1>
 
-                <p 
+                <p
                     className="animate-slide-up [animation-delay:200ms] font-poppins mt-8 text-white/90 text-center text-lg md:text-[22px] font-normal leading-relaxed max-w-[800px]"
                 >
                     We build scalable digital products, from custom software and AI platforms
@@ -35,7 +35,7 @@ const Hero = () => {
                     with mentorship and advisory support.
                 </p>
 
-                <div 
+                <div
                     className="animate-slide-up [animation-delay:400ms] mt-12"
                 >
                     <Link href="/portfolio">

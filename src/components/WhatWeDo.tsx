@@ -93,6 +93,9 @@ const Card = ({ card, index, progress, range, targetScale }: {
                 }}
                 className="relative w-full max-w-[95%] md:max-w-[90%] lg:max-w-[1240px] flex flex-col items-center px-4 md:px-0"
             >
+                {/* The "Tab" top part (Aesthetic Detail) */}
+                <div className="absolute -top-4 md:-top-6 left-1/2 -translate-x-1/2 w-[90%] md:w-[80%] h-10 md:h-12 bg-white rounded-t-[30px] md:rounded-t-[40px] -z-10" />
+
                 <div className="bg-white rounded-[24px] md:rounded-[40px] lg:rounded-[48px] p-4 py-6 md:p-8 md:py-10 lg:py-12 lg:px-16 shadow-[0_20px_60px_rgba(0,0,0,0.25)] md:shadow-[0_30px_80px_rgba(0,0,0,0.35)] relative overflow-hidden w-full flex flex-col gap-3 md:gap-4">
                     {/* Centered Header inside Card */}
                     <div className="text-center">
@@ -101,7 +104,7 @@ const Card = ({ card, index, progress, range, targetScale }: {
                         </h3>
                         <p className="mx-auto max-w-[650px] font-sora font-medium text-[14px] md:text-[16px] lg:text-[20px] leading-[1.5] text-black/70 text-center">
                             {card.description}
-                        </p> 
+                        </p>
                     </div>
 
                     <div className="grid lg:grid-cols-2 gap-4 md:gap-6 lg:gap-8 items-center">
@@ -152,22 +155,23 @@ const WhatWeDo = () => {
     return (
         <section
             ref={container}
+            id="service"
             className="relative w-full bg-[linear-gradient(33.32deg,#052D8F_-1.52%,#051743_-1.51%,#103388_11.08%,#0B2971_18.16%,#0C2156_27.93%,#0C2152_32.94%,#030F2C_44.73%,#072A81_51.7%,#0B2E86_55.99%,#041A50_68.01%,#030F2C_82.18%)]"
         >
             {/* Decorative background glow */}
             <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-600/20 blur-[120px] rounded-full" />
             <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-600/20 blur-[120px] rounded-full" />
 
-            <div className="max-w-7xl mx-auto relative z-10 py-32 px-4 md:px-8 lg:px-16">
+            <div className="max-w-7xl mx-auto relative z-10 py-16 md:py-32 px-4 md:px-8 lg:px-16">
                 {/* Header Section */}
-                <div className="flex flex-col items-center text-center mb-24">
+                <div className="flex flex-col items-center text-center mb-12 md:mb-24">
                     <div className="relative inline-block">
-                        <h2 className="font-sans font-bold text-[48px] leading-[1.2] text-[#FAFCFF]">
+                        <h2 className="font-sans font-bold text-[32px] md:text-[48px] leading-[1.2] text-[#FAFCFF]">
                             What We Do<span className="text-[#FFB23E]">.</span>
                         </h2>
-                        <div className="mx-auto mt-2 w-[172px] h-[5px] rounded-[73px] bg-[#FFB23E]" />
+                        <div className="mx-auto mt-2 w-[120px] md:w-[172px] h-[4px] md:h-[5px] rounded-[73px] bg-[#FFB23E]" />
                     </div>
-                    <p className="mx-auto mt-6 max-w-[750px] font-poppins font-medium text-[24px] leading-[1.3] text-center text-white/90">
+                    <p className="mx-auto mt-6 max-w-[750px] font-poppins font-medium text-[18px] md:text-[24px] leading-[1.4] text-center text-white/90 px-4">
                         We are technology innovators, combining strategy, design, and engineering to build solutions that are secure, scalable, and future-ready.
                     </p>
                 </div>

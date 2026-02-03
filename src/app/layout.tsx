@@ -36,7 +36,10 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <SmoothScroll />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
