@@ -3,6 +3,8 @@
 import React from 'react';
 import Link from 'next/link';
 
+import Magnetic from './Magnetic';
+
 const BuildTogether = () => {
     return (
         <section className="w-full py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white overflow-hidden">
@@ -34,12 +36,14 @@ const BuildTogether = () => {
                             Ready to transform your idea into reality?
                         </p>
 
-                        <div className="pt-4">
-                            <Link href="/contact">
-                                <button className="bg-[#FFB23E] hover:bg-[#ffa726] text-black font-bold px-10 md:px-12 py-4 md:py-5 rounded-full text-base md:text-[18px] transition-all transform hover:scale-105 active:scale-95 shadow-xl">
-                                    Contact Us
-                                </button>
-                            </Link>
+                        <div className="pt-4 flex justify-center">
+                            <Magnetic>
+                                <Link href="/contact">
+                                    <button className="bg-[#FFB23E] text-black font-bold px-10 md:px-12 py-4 md:py-5 rounded-full text-base md:text-[18px] transition-all transform active:scale-95 shadow-xl cursor-pointer">
+                                        Contact Us
+                                    </button>
+                                </Link>
+                            </Magnetic>
                         </div>
                     </div>
                 </div>

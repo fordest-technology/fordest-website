@@ -6,6 +6,8 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
+import Magnetic from "./Magnetic";
+
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +32,10 @@ export default function Navbar() {
 
     const navLinks = [
         { name: "Home", href: "/" },
-        { name: "About", href: "/#about" },
+        { name: "Expertise", href: "/expertise" },
         { name: "Service", href: "/#service" },
         { name: "Portfolio", href: "/portfolio" },
+        { name: "About", href: "/#about" },
     ];
 
     return (
@@ -55,12 +58,12 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Nav Links */}
-                <div className="hidden space-x-12 text-sm font-semibold md:flex transition-colors text-white">
+                <div className="hidden space-x-10 text-sm font-semibold md:flex transition-colors text-white">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="transition-all hover:opacity-70"
+                            className={`transition-all hover:text-[#FFB23E] ${pathname === link.href ? 'text-[#FFB23E]' : ''}`}
                         >
                             {link.name}
                         </Link>
@@ -69,14 +72,16 @@ export default function Navbar() {
 
                 {/* Contact Button (Desktop) */}
                 <div className="hidden md:block">
-                    <Link href="/contact">
-                        <button className={`rounded-full px-10 py-3 text-sm font-bold transition-all hover:scale-105 active:scale-95 cursor-pointer ${isGlassy
-                            ? "bg-white text-black"
-                            : "bg-white text-[#001B44]"
-                            }`}>
-                            Contact Us
-                        </button>
-                    </Link>
+                    <Magnetic>
+                        <Link href="/contact">
+                            <button className={`rounded-full px-10 py-3 text-sm font-bold transition-all active:scale-95 cursor-pointer ${isGlassy
+                                ? "bg-[#FFB23E] text-black"
+                                : "bg-white text-[#001B44]"
+                                }`}>
+                                Contact Us
+                            </button>
+                        </Link>
+                    </Magnetic>
                 </div>
 
                 {/* Mobile Menu Button */}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Sora, Poppins } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
+import Footer from "@/components/Footer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,9 +32,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable} ${poppins.variable}`}>
-      <body className="antialiased">
+      <body className="antialiased flex flex-col min-h-screen">
         <SmoothScroll />
-        {children}
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
