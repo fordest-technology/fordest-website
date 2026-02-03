@@ -1,9 +1,47 @@
 "use client";
 
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { ArrowRight, Loader2 } from 'lucide-react';
 
 const ContactSection = () => {
+    const [isLoading, setIsLoading] = useState(false);
+    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setIsLoading(true);
+        setStatus('idle');
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            company: formData.get('company'),
+            projectDetails: formData.get('projectDetails'),
+        };
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus('error');
+            }
+        } catch (error) {
+            setStatus('error');
+        } finally {
+            setIsLoading(false);
+        }
+    };
+
     return (
         <section id="contact" className="w-full py-16 md:py-24 px-4 md:px-8 lg:px-16 bg-white">
             <div className="max-w-7xl mx-auto overflow-hidden rounded-[24px] md:rounded-[32px] shadow-2xl flex flex-col md:flex-row min-h-[500px] md:min-h-[600px]">
@@ -59,37 +97,61 @@ const ContactSection = () => {
                             </p>
                         </div>
 
-                        <form className="space-y-4 md:space-y-5" onSubmit={(e) => e.preventDefault()}>
-                            <div className="grid gap-4 md:gap-5">
+                        <form className="space-y-5" onSubmit={handleSubmit}>
+                            <div className="grid gap-5">
                                 <input
                                     type="text"
+                                    name="name"
+                                    required
                                     placeholder="Your Name"
                                     className="w-full bg-transparent border border-white/20 rounded-[12px] px-6 py-3.5 md:py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFB23E] transition-colors font-poppins text-sm md:text-base"
                                 />
                                 <input
                                     type="email"
+                                    name="email"
+                                    required
                                     placeholder="Email"
                                     className="w-full bg-transparent border border-white/20 rounded-[12px] px-6 py-3.5 md:py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFB23E] transition-colors font-poppins text-sm md:text-base"
                                 />
                                 <input
                                     type="text"
+                                    name="company"
                                     placeholder="Company"
                                     className="w-full bg-transparent border border-white/20 rounded-[12px] px-6 py-3.5 md:py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFB23E] transition-colors font-poppins text-sm md:text-base"
                                 />
                                 <textarea
+                                    name="projectDetails"
+                                    required
                                     placeholder="Project Details"
                                     rows={4}
                                     className="w-full bg-transparent border border-white/20 rounded-[12px] px-6 py-3.5 md:py-4 text-white placeholder:text-white/40 focus:outline-none focus:border-[#FFB23E] transition-colors font-poppins resize-none text-sm md:text-base"
                                 />
                             </div>
 
-                            <button className="w-full bg-[#FFB23E] hover:bg-[#ffa726] text-[rgba(40,41,56,1)] font-bold py-4 md:py-5 rounded-full text-base md:text-[18px] transition-all transform hover:scale-[1.02] active:scale-[0.98] shadow-lg">
-                                Send Contact
+                            <button 
+                                disabled={isLoading}
+                                className="w-full bg-[#FFB23E] hover:bg-[#ffa726] text-[rgba(40,41,56,1)] font-bold py-5 rounded-full text-[18px] transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                            >
+                                {isLoading ? (
+                                    <>
+                                        <Loader2 className="animate-spin w-5 h-5" />
+                                        Sending...
+                                    </>
+                                ) : (
+                                    'Send Contact'
+                                )}
                             </button>
+                            
+                            {status === 'success' && (
+                                <p className="text-green-400 text-center font-bold">Message sent successfully!</p>
+                            )}
+                            {status === 'error' && (
+                                <p className="text-red-400 text-center font-bold">Failed to send message. Please try again.</p>
+                            )}
                         </form>
 
                         <div className="flex justify-center pt-2">
-                            <button className="group flex items-center gap-2 text-white/90 font-bold text-sm md:text-[16px] hover:text-[#FFB23E] transition-colors">
+                            <button className="group flex items-center gap-2 text-white font-bold text-[16px] hover:text-[#FFB23E] transition-colors cursor-pointer">
                                 Get in touch with us
                                 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-1" />
                             </button>
