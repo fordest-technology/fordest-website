@@ -128,7 +128,7 @@ const ContactSection = () => {
                                 />
                             </div>
 
-                            <button 
+                            <button
                                 disabled={isLoading}
                                 className="w-full bg-[#FFB23E] hover:bg-[#ffa726] text-[rgba(40,41,56,1)] font-bold py-5 rounded-full text-[18px] transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                             >
@@ -141,7 +141,7 @@ const ContactSection = () => {
                                     'Send Contact'
                                 )}
                             </button>
-                            
+
                             {status === 'success' && (
                                 <p className="text-green-400 text-center font-bold">Message sent successfully!</p>
                             )}
