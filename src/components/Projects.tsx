@@ -36,7 +36,7 @@ const projects = [
         subtitle: "Transform School Management",
         description: "Comprehensive platform for educational institution management.",
         tags: ["SaaS", "Edu"],
-        image: "/eduit.svg",
+        image: "/eduit-cover.svg",
         cta: "View project",
         large: false
     }
@@ -65,8 +65,8 @@ const ProjectCard = ({ project }: { project: typeof projects[0] }) => {
                         initial: { x: '-100%', opacity: 0 },
                         hover: { x: 0, opacity: 1 }
                     }}
-                    transition={{ type: "spring", damping: 25, stiffness: 120 }}
-                    className={`absolute inset-0 bg-[#1A1B4B]/70 md:bg-[#1A1B4B]/80 backdrop-blur-[2px] md:backdrop-blur-sm flex flex-col justify-end ${project.large ? 'w-full md:w-1/2 p-6 md:p-12' : 'w-full p-5 md:p-6'} translate-x-0 md:translate-x-[-100%] md:opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500`}
+                    transition={{ duration: 0.35, ease: "circOut" }}
+                    className={`absolute inset-0 bg-[#1A1B4B]/70 md:bg-[#1A1B4B]/80 backdrop-blur-[2px] md:backdrop-blur-sm flex flex-col justify-end will-change-transform ${project.large ? 'w-full md:w-1/2 p-6 md:p-12' : 'w-full p-5 md:p-6'}`}
                 >
                     <div className={`${project.large ? 'space-y-3 md:space-y-4' : 'space-y-2'} max-w-[450px]`}>
                         <h3 className={`font-sora font-bold text-white ${project.large ? 'text-2xl md:text-3xl lg:text-4xl' : 'text-xl md:text-2xl'}`}>

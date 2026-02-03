@@ -12,7 +12,7 @@ const portfolioProjects = [
         id: 1,
         title: "EchoNode",
         category: "Web3",
-        description: "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        description: "A real-time blockchain notification platform helping traders stay informed on Hyperliquid.",
         image: "/echonode-card.svg",
         link: "/portfolio/echonode"
     },
@@ -20,7 +20,7 @@ const portfolioProjects = [
         id: 2,
         title: "Tessa. Support Agent",
         category: "Saas",
-        description: "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        description: "AI-powered support agent for automated customer queries and intelligent interactions.",
         image: "/tessa.svg",
         link: "/portfolio/tessa"
     },
@@ -28,15 +28,15 @@ const portfolioProjects = [
         id: 3,
         title: "Eduit",
         category: "Saas",
-        description: "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
-        image: "/eduit.svg",
+        description: "Comprehensive platform for educational institution management and digital ecosystems.",
+        image: "/eduit-cover.svg",
         link: "/portfolio/eduit"
     },
     {
         id: 4,
         title: "Lexora",
         category: "Saas",
-        description: "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        description: "Streamlining legal workflows and document management for modern law firms.",
         image: "/lexora.svg",
         link: "/portfolio/lexora"
     },
@@ -44,7 +44,7 @@ const portfolioProjects = [
         id: 5,
         title: "Starlite.",
         category: "Saas",
-        description: "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
+        description: "A robust system for managing healthcare delivery and patient records with precision.",
         image: "/starlite-cover.svg",
         link: "/portfolio/starlite"
     },
@@ -52,8 +52,8 @@ const portfolioProjects = [
         id: 6,
         title: "Korban",
         category: "Blockchain",
-        description: "Apparently we had reached a great height in the atmosphere, for the sky was a dead black, and the stars had ceased to twinkle.",
-        image: "/korban-cover.svg",
+        description: "Secure and efficient platform for managing digital assets and on-chain portfolios.",
+        image: "/korban.svg",
         link: "/portfolio/korban"
     },
 ];

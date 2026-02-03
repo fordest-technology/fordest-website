@@ -12,7 +12,7 @@ export default function EduitCaseStudy() {
                     title="Eduit"
                     subtitle="Transform School Management"
                     description="Comprehensive platform for educational institution management."
-                    image="/eduit.svg"
+                    image="/eduit-cover.svg"
                 />
 
                 <CaseStudyOverview
@@ -44,7 +44,7 @@ export default function EduitCaseStudy() {
                             "Easier compliance reporting for educational regulatory bodies."
                         ]
                     }}
-                    image="/eduit.svg"
+                    image="/eduit-cover.svg"
                 />
 
                 <BuildTogether />
